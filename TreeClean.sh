@@ -5,8 +5,7 @@ if [ $# -gt 1 ]; then
   exit 1
 fi
 
-ls $1 &> /dev/null
-if [ $? -ne 0 ]; then
+if ! ls "$1" &> /dev/null; then
   echo "Error : Given path is invalid or not exists."
   exit 1
 fi
